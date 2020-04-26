@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace AppWithIdentity.Controllers
 {
@@ -15,7 +16,7 @@ namespace AppWithIdentity.Controllers
             _logger = logger;
         }
 
-        [Authorize(Roles = "group1, group2")]
+        //[Authorize(Roles = "group1, group2")]
         public IActionResult Index()
         {
             return View();
