@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AppWithIdentity.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using AppWithIdentity.Models;
-using Microsoft.AspNetCore.Authorization;
+using System.Diagnostics;
 
 namespace AppWithIdentity.Controllers
 {
@@ -19,6 +15,7 @@ namespace AppWithIdentity.Controllers
             _logger = logger;
         }
 
+        [Authorize(Roles = "group1, group2")]
         public IActionResult Index()
         {
             return View();
